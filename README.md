@@ -1,15 +1,17 @@
- ## Calculadora TopShow
- Uma calculadora de console simples, poderosa, que permite realizar as quatro operações matemáticas.
+ ## Lista de exercícios 2
+ #### Trabalhando com arrays
+ Uma série de operações a partir de um array simples
 
  ### Funcionalidades
- - **Operações básicas:** Realize somas, subtrações, divisões e multiplicações com facilidade;
- - **Suporte a decimais:** Trabalhe com números não inteiros;
- - **Validação de entrada:** A calculadora garante que apenas operações válidas sejam selecionadas no menu inicial;
- - **Tratamento de divisão por zero:** A calculadora é capaz de evitar uma tentativa de divisão por zero;
+ - **Extremos:** Informa o maior (ou os três maiores) e o menor valor do array;
+ - **Valores médios:** Informa os valores médios do array, seja em valor ou em ordem de posicionamento;
+ - **Valores negativos:** Separa os valores negativos do array;
+ - **Remoção de valores:** Remove o valor desejado da sequência;
+ - **Diferentes ordens:** Escreve a sequência na ordem desejada;
 
 ---
 ### Como usar
-1. Clone o repositório ou baixe o código fonte da calculadora;
+1. Clone o repositório ou baixe o código fonte da lista de exercícios 2;
 2. Abra o terminal ou o Prompt de Comando e navegue até a pasta correspondente;
 3. Utilize o comando abaixo para restaurar as dependências do projeto:
 ```
@@ -23,9 +25,9 @@ dotnet build --configuration Release
 ```
 dotnet run --project Calculadora.ConsoleApp
 ```
-6. Para executar o arquivo compilado, navegue até a pasta `./Calculadora.ConsoleApp/bin/Release/net8.0/`
+6. Para executar o arquivo compilado, navegue até a pasta `./Lista de exercícios 2/bin/Release/net8.0/`
 ```
-Calculadora.ConsoleApp.exe
+Lista de exercícios 2.exe
 ```
 
 ## Requisitos
