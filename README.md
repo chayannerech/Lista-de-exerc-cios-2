@@ -23,7 +23,7 @@ dotnet build --configuration Release
 ```
 5. Para executar o projeto compilando em tempo real:
 ```
-dotnet run --project Calculadora.ConsoleApp
+dotnet run --project Lista de exercícios 2
 ```
 6. Para executar o arquivo compilado, navegue até a pasta `./Lista de exercícios 2/bin/Release/net8.0/`
 ```
