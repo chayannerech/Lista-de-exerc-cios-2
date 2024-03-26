@@ -16,7 +16,41 @@
             }
         }
 
-        private static void RealizarAcao(int[] valores, int[] emOrdem, string opcao)
+        static void mostrarSequencia(int[] valores)
+        {
+            for (int i = 0; i < valores.Length; i++)
+            {
+                Console.Write(valores[i]);
+                if (i < valores.Length - 1) Console.Write(", ");
+            }
+        }
+        static int[] ColocaOrdem(int[] valores)
+        {
+            int[] emOrdem = new int[valores.Length];
+            Array.Copy(valores, emOrdem, valores.Length);
+            Array.Sort(emOrdem);
+            return emOrdem;
+        }
+        static string MostrarMenu(int[] valores)
+        {
+            Console.Clear();
+            Console.Write("Lista de exercícios 2\n\nA sequência é: ");
+
+            mostrarSequencia(valores);
+
+            Console.WriteLine("\n\nO que deseja fazer?\n\n1- encontrar o maior valor\n2- encontrar o menor valor\n3- encontrar o valor médio\n4- encontrar os três maiores valores\n5- encontrar os valores negativos\n6- mostrar na tela os valores\n7- remover um item da sequência\n8- sair\n");
+            return Console.ReadLine();
+        }
+        static bool SaidaSelecionada(string opcao)
+        {
+            return opcao == "8";
+        }
+        static bool OpcaoInvalida(string opcao)
+        {
+            bool opcaoInvalida = opcao != "1" && opcao != "2" && opcao != "3" && opcao != "4" && opcao != "5" && opcao != "6" && opcao != "7" && opcao != "8";
+            return opcaoInvalida;
+        }
+                private static void RealizarAcao(int[] valores, int[] emOrdem, string opcao)
         {
             switch (opcao)
             {
@@ -30,16 +64,22 @@
 
                 case "3":
                     string medio = "";
+                    decimal soma = 0;
                     do
                     {
-                        Console.WriteLine("\nVocê deseja o valor médio [1] ou o número do meio [2]?");
+                        Console.WriteLine("\nVocê deseja os valores médios [1], os números do meio [2] ou a média dos valores [3]?");
                         medio = Console.ReadLine();
 
                         if (medio == "1") Console.WriteLine($"\nOs valores médios são: {emOrdem[(emOrdem.Length / 2) - 1]} e {emOrdem[emOrdem.Length / 2]}");
                         else if (medio == "2") Console.WriteLine($"\nOs números do meio são: {valores[(valores.Length / 2) - 1]} e {valores[valores.Length / 2]}");
+                        else if (medio == "3")
+                        {
+                            for (int i = 0; i < valores.Length; i++) soma = soma + valores[i];
+                            Console.WriteLine("\nA média dos valores é: " + Math.Round(soma / valores.Length, 2));
+                        }
                         else Console.WriteLine("Valor inválido, por favor, tente novamente");
                     }
-                    while (medio != "1" && medio != "2");
+                    while (medio != "1" && medio != "2" && medio != "3");
                     break;
 
                 case "4":
@@ -88,41 +128,7 @@
                     break;
             }
         }
-        static void mostrarSequencia(int[] valores)
-        {
-            for (int i = 0; i < valores.Length; i++)
-            {
-                Console.Write(valores[i]);
-                if (i < valores.Length - 1) Console.Write(", ");
-            }
-        }
-        static int[] ColocaOrdem(int[] valores)
-        {
-            int[] emOrdem = new int[valores.Length];
-            Array.Copy(valores, emOrdem, valores.Length);
-            Array.Sort(emOrdem);
-            return emOrdem;
-        }
-        static string MostrarMenu(int[] valores)
-        {
-            Console.Clear();
-            Console.Write("Lista de exercícios 2\n\nA sequência é: ");
-
-            mostrarSequencia(valores);
-
-            Console.WriteLine("\n\nO que deseja fazer?\n\n1- encontrar o maior valor\n2- encontrar o menor valor\n3- encontrar o valor médio\n4- encontrar os três maiores valores\n5- encontrar os valores negativos\n6- mostrar na tela os valores\n7- remover um item da sequência\n8- sair\n");
-            return Console.ReadLine();
-        }
-        static bool SaidaSelecionada(string opcao)
-        {
-            return opcao == "8";
-        }
-        static bool OpcaoInvalida(string opcao)
-        {
-            bool opcaoInvalida = opcao != "1" && opcao != "2" && opcao != "3" && opcao != "4" && opcao != "5" && opcao != "6" && opcao != "7" && opcao != "8";
-            return opcaoInvalida;
-        }
-        static bool DeveContinuar()
+static bool DeveContinuar()
         {
             Console.WriteLine("\n\nDeseja repetir? [S/N]");
             string continuar = Console.ReadLine();
