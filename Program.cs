@@ -38,7 +38,7 @@
 
             mostrarSequencia(valores);
 
-            Console.WriteLine("\n\nO que deseja fazer?\n\n1- encontrar o maior valor\n2- encontrar o menor valor\n3- encontrar o valor médio\n4- encontrar os três maiores valores\n5- encontrar os valores negativos\n6- mostrar na tela os valores\n7- remover um item da sequência\n8- sair\n");
+            Console.WriteLine("\n\nO que deseja fazer?\n\n1- encontrar o maior valor\n2- encontrar o menor valor\n3- encontrar o valor médio\n4- encontrar os três maiores valores\n5- encontrar os valores negativos\n6- mostrar os valores na tela \n7- remover um item da sequência\n8- sair\n");
             return Console.ReadLine();
         }
         static bool SaidaSelecionada(string opcao)
